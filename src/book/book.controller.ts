@@ -1,10 +1,12 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { AddUpdateBookDto } from './dto/add-update-book.dto';
+import { GetWithColumnDto } from './dto/get-with-column.dto';
 
 @Controller('book')
 export class BookController {
   
   @Get('/search-column')
-  async getWithColumn() {
+  async getWithColumn(@Query() data: GetWithColumnDto) {
     
   }
 
@@ -14,27 +16,27 @@ export class BookController {
   }
 
   @Get('/:id')
-  async get() {
+  async get(@Param('id') id) {
 
   }
 
   @Get('/search/:search')
-  async search() {
+  async search(@Param('search') search) {
 
   }
 
   @Post('/add')
-  async add() {
+  async add(@Body() data: AddUpdateBookDto) {
 
   }
 
   @Put('/update/:id')
-  async update() {
+  async update(@Param('id') id, @Body() data: AddUpdateBookDto) {
 
   }
 
   @Delete('/delete/:id')
-  async delete() {
+  async delete(@Param('id') id) {
     
   }
 }
