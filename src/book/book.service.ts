@@ -28,7 +28,7 @@ export class BookService {
         data.author.toLowerCase().search(search.toLowerCase()) != -1 ||
         data.name.toLowerCase().search(search.toLowerCase()) != -1 ||
         data.publisher.toLowerCase().search(search.toLowerCase()) != -1 ||
-        data.publishing.toDateString().search(search.toLowerCase()) != -1 ||
+        data.publishing.toString().search(search.toLowerCase()) != -1 ||
         data.score.toString().search(search.toLowerCase()) != -1 ||
         data.status.toLowerCase().search(search.toLowerCase()) != -1 ||
         data.type.toLowerCase().search(search.toLowerCase()) != -1
