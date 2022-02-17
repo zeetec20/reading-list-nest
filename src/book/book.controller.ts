@@ -1,9 +1,11 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseFilters } from '@nestjs/common';
 import { BookService } from './book.service';
 import { AddUpdateBookDto } from './dto/add-update-book.dto';
 import { GetWithColumnDto } from './dto/get-with-column.dto';
+import { EntityNotFoundExceptionFilter } from './filter/entity-not-found-exception.filter';
 
-@Controller('book')
+@Controller('/')
+@UseFilters(new EntityNotFoundExceptionFilter)
 export class BookController {
   constructor(private readonly bookService: BookService) {}
   
